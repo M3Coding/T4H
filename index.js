@@ -52,10 +52,10 @@ app.post("/submit", async (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const phone = req.body.phone;
-    const address= req.body.address;
+    const inquiry= req.body.inquiry;
     const appt= req.body.date;
 
-    const formData = `Name: ${name}\n Email: ${email}\n Phone Number: ${phone} \n Address: ${address}\n Appointment Request Date: ${appt} \n`
+    const formData = `Name: ${name}\n Email: ${email}\n Phone Number: ${phone} \n Address: ${inquiry}\n Appointment Request Date: ${appt} \n`
     console.log(formData); //template for the form data sent to the pn
     try {
         await sendMessage(number, formData, personalNum)//use the send message function to get the data from the form and send to personal num when the person hits submit. 
