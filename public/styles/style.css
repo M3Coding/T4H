@@ -86,3 +86,36 @@ body {
         justify-content: center;
     }
 }
+
+.announcements {
+    padding: 24px 0;
+}
+.viral-video {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.announcement-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.announcements h2 {
+    margin: 0;
+    text-align: right;
+}
+.announcements-frame {
+    width: 267px;
+    max-width: 100%;
+    aspect-ratio: 267 / 591;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 576px) {
+    .announcements {
+        flex-direction: column;
+    }
+}
