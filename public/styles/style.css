@@ -1,0 +1,49 @@
+html, body {
+    overflow-x: hidden;
+}
+body {
+    background-color: transparent;
+}
+.content-wrapper {
+    position: relative;
+    z-index: 0;
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+.background-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: fill;
+    opacity: 0.4;
+}
+.profile-img img {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    border-radius: 8px;
+}
+
+/* Disable the 3D tilt effect on small screens: translateZ under perspective
+   was scaling the image past the viewport edge, causing horizontal scroll
+   and overlap with the "Meet T4H" heading above it. */
+@media (min-width: 768px) {
+    .profile-about-row {
+        perspective: 1000px;
+    }
+    .profile-img {
+        position: relative;
+        z-index: 2;
+        transform: translateZ(60px);
+    }
+}
