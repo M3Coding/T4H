@@ -27,13 +27,20 @@ body {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: fill;
-    opacity: 0.4;
+    
 }
 .logo {
     height: 48px;
     width: auto;
     object-fit: contain;
 }
+.text-shade {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(3px);
+}
+
 .profile-img img {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
     border-radius: 8px;
