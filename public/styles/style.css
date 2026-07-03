@@ -52,3 +52,37 @@ body {
         transform: translateZ(60px);
     }
 }
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 24px;
+}
+.footer-text {
+    color: gray;
+    margin: 0;
+    text-align: left;
+}
+.social_icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+.social_icon {
+    height: 28px;
+    width: 28px;
+    object-fit: contain;
+}
+@media (max-width: 480px) {
+    .site-footer {
+        justify-content: center;
+        text-align: center;
+    }
+    .social_icons {
+        justify-content: center;
+    }
+}
