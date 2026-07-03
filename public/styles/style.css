@@ -29,14 +29,19 @@ body {
     object-fit: fill;
     opacity: 0.4;
 }
+.logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
 .profile-img img {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
     border-radius: 8px;
 }
 
-/* Disable the 3D tilt effect on small screens: translateZ under perspective
-   was scaling the image past the viewport edge, causing horizontal scroll
-   and overlap with the "Meet T4H" heading above it. */
+.form-floating > .inquiry {
+    height: 150px;
+}
 @media (min-width: 768px) {
     .profile-about-row {
         perspective: 1000px;

@@ -6,7 +6,7 @@ import FormData from "form-data";
 import Mailgun from "mailgun.js"
 
 const app = express();
-const port = 3000;
+const port = 5000;
 /* const token= process.env.SW_TOKEN;
 const space= process.env.SW_SPACE;
 const projectID= process.env.SW_PROJECT;
