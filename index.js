@@ -64,7 +64,7 @@ app.post("/api/send-email", async (req, res) => {
 
     const emailData = {
         from: `t4hbless@gmail.com`,
-        to: "meady2009@gmail.com",
+        to: "t4hbless@gmail.com",
         subject: `New Form Submission from ${name}`,
         text: `Recieved a new submission: \n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${appt}\nInquiry: ${inquiry}`,
         html: `<p><strong>Name:</strong> ${name}</p>
