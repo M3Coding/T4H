@@ -24,12 +24,25 @@
         }
         .background-video video {
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            transform: translateY(-50%);
+            object-fit: fill;
             opacity: 0.4;
+        }
+        .profile-about-row {
+            perspective: 1000px;
+        }
+        .profile-img {
+            position: relative;
+            z-index: 2;
+            transform: translateZ(60px);
+        }
+        .profile-img img {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -57,9 +70,13 @@
       </video>
     </div>
 <!--Profile Section-->
-    <div class="px-2 py-2 my-2 text-center"> 
-        <h1 class="display-5 fw-bold text-body-emphasis">Meet T4H</h1> 
-        <img class="d-block mx-auto mb-4" src="/images/T4H_profile_pic2.jpeg" alt="" width="800" height="625" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;"> 
+    <div class="px-2 py-2 my-2 text-center">
+        <h1 class="display-5 fw-bold text-body-emphasis text-center mb-4" >Meet T4H</h1>
+        <div class="row align-items-center justify-content-center profile-about-row">
+        <div class="col-md-5 profile-img">
+            <img class="d-block mx-auto mb-4" src="/images/T4H_profile_pic2.jpeg" alt="" width="800" height="625" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+
+        </div>
         <!--<h1 class="display-5 fw-bold text-body-emphasis">Totally 4 Him</h1> 
         <div class="col-lg-6 mx-auto"> 
             <p class="lead mb-2" style="padding:0;">706-617-4291</p> 
@@ -70,8 +87,8 @@
                 <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button> 
             </div>  -->
         
-        <div class="col-lg-6 mx-auto"> 
-            <p class="lead mb-2" style="padding:0;">Totally 4 Him (T4H) is a Georgia-based gospel quartet group made up of four dynamic and dedicated young men of God: lead singer Carlos Harvey, Michael Harvey Jr. (also known as “Turk”), Dante Eady, and Jesse Eady. Carlos and Michael are biological brothers, as are Dante and Jesse, forming a powerful family bond that fuels their soul-stirring sound and unified ministry.The group formed through their shared passion for music ministry after singing together in church and officially entered the gospel music scene in 2009. In 2010, they released their independent project Be Grateful, marking the beginning of their professional journey in gospel music. T4H has been blessed to travel nationally, ministering through song and sharing the stage with some of gospel music ’s greats. Their appearances include platforms such as Bobby Jones Gospel and MegaFest, where their performances have continued to expand their reach and impact. Their national debut radio single,“All We Need Is Love,” featuring Grammy, Stellar, and Dove Award–winning gospel legend Doug Williams and produced by award-winning producer Stan Jones, introduced Totally 4 Him as a fresh and powerful force in gospel music. The single made a strong impact on gospel radio and showcased their passion for uplifting and inspiring listeners. The group released their sophomore single,“You Are Wonderful” in 2017, written & produced by Stellar Award winning & Grammy nominated producer, Dana Sorey. In 2021, T4H released “For Yourself, John “Jubu” featuring” Smith of The Soul Seekers and Virgil Reliford. Followed by an EP produced by Dana Sorey in 2023. Continuing their mission to elevate and push gospel music forward, Totally 4 Him is preparing for the release of their new single,“Be A Witness,” set to debut on February 2026. The upcoming release reflects their ongoing dedication to spreading the message of faith, hope, and love through powerful and heartfelt music.
+        <div class="col-md-6 about text-start">
+            <p class="lead mb-2" style="padding:0; font-size:18px;" >Totally 4 Him (T4H) is a Georgia-based gospel quartet group made up of four dynamic and dedicated young men of God: lead singer Carlos Harvey, Michael Harvey Jr. (also known as “Turk”), Dante Eady, and Jesse Eady. Carlos and Michael are biological brothers, as are Dante and Jesse, forming a powerful family bond that fuels their soul-stirring sound and unified ministry.The group formed through their shared passion for music ministry after singing together in church and officially entered the gospel music scene in 2009. In 2010, they released their independent project Be Grateful, marking the beginning of their professional journey in gospel music. T4H has been blessed to travel nationally, ministering through song and sharing the stage with some of gospel music ’s greats. Their appearances include platforms such as Bobby Jones Gospel and MegaFest, where their performances have continued to expand their reach and impact. Their national debut radio single,“All We Need Is Love,” featuring Grammy, Stellar, and Dove Award–winning gospel legend Doug Williams and produced by award-winning producer Stan Jones, introduced Totally 4 Him as a fresh and powerful force in gospel music. The single made a strong impact on gospel radio and showcased their passion for uplifting and inspiring listeners. The group released their sophomore single,“You Are Wonderful” in 2017, written & produced by Stellar Award winning & Grammy nominated producer, Dana Sorey. In 2021, T4H released “For Yourself, John “Jubu” featuring” Smith of The Soul Seekers and Virgil Reliford. Followed by an EP produced by Dana Sorey in 2023. Continuing their mission to elevate and push gospel music forward, Totally 4 Him is preparing for the release of their new single,“Be A Witness,” set to debut on February 2026. The upcoming release reflects their ongoing dedication to spreading the message of faith, hope, and love through powerful and heartfelt music.
 
 With unwavering faith and a growing catalog of impactful songs, Totally 4 Him remains committed to using their voices to inspire, uplift, and draw souls closer to God through gospel music.</p> 
             
@@ -81,10 +98,9 @@ With unwavering faith and a growing catalog of impactful songs, Totally 4 Him re
                 <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button> 
             </div>  -->
             <hr style="width:100%; ">
-        </div> 
-        </div> 
-        
-    
+        </div>
+        </div>
+        </div>
 
 <!--Form Section-->
     <div class="container col-xl-10 col-xxl-8 px-4 py-5" id="contact"> 
@@ -108,7 +124,7 @@ With unwavering faith and a growing catalog of impactful songs, Totally 4 Him re
                  -->
             </div> 
             <div class="col-md-10 mx-auto col-lg-5"> 
-                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="/submit" method="POST" > 
+                <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="/api/send-email" method="POST" > 
                     <div class="form-floating mb-3 "> 
                         <input type="text" class="form-control" name="name" id="name" placeholder="Full Name"> 
                         <label for="floatingInput">Name</label> 
@@ -138,7 +154,6 @@ With unwavering faith and a growing catalog of impactful songs, Totally 4 Him re
             </div> 
         </div> 
         <hr style="width:100%;">
-    </div>
     </div>
     </div>
 
