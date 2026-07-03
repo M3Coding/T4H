@@ -64,7 +64,7 @@ app.post("/api/send-email", async (req, res) => {
 
     const emailData = {
         from: `t4hbless@gmail.com`,
-        to: "t4hbless@gmail.com",
+        to: "meady2009@gmail.com",
         subject: `New Form Submission from ${name}`,
         text: `Recieved a new submission: \n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${appt}\nInquiry: ${inquiry}`,
         html: `<p><strong>Name:</strong> ${name}</p>
@@ -73,9 +73,10 @@ app.post("/api/send-email", async (req, res) => {
                 <p><strong>Inquiry:</strong> ${inquiry}</p>`
 
     };
+   
     try {
         await mg.messages.create(process.env.MAILGUN_DOMAIN, emailData);
-        return res.status(200).json({success: true, message: 'Mail sent successfully!'})
+        return res.send("✅ Your appointment resquest has been sent successfully!");
     } catch (error) {
         console.log(error);
         return res.status(500).json({success: false, error: 'Internal server error'})
